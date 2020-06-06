@@ -3,7 +3,7 @@ repository:
   # See https://developer.github.com/v3/repos/#edit for all available settings.
 
   # The name of the repository. Changing this will rename the repository
-  #name: repo-name
+  # name: repo-name
 
   # A short description of the repository that will show up on GitHub
   description: Ansible Role for NRPE
@@ -12,7 +12,7 @@ repository:
   topics: ansible, ansible-role, nagios, nrpe
 
   # A URL with more information about the repository
-  #homepage: https://example.github.io/
+  # homepage: https://example.github.io/
 
   # Either `true` to make the repository private, or `false` to make it public.
   private: false
@@ -41,13 +41,13 @@ repository:
   # rebase-merging.
   allow_rebase_merge: true
 
-# Labels: define labels for Issues and Pull Requests
+  # Labels: define labels for Issues and Pull Requests
   labels:
-  - name: bug
-    color: CC0000
-  - name: feature
-    color: 336699
-  - name: planned
-    color: 336699
-  - name: wontfix
-    color: 336699
+    - name: bug
+      color: CC0000
+    - name: feature
+      color: 336699
+    - name: planned
+      color: 336699
+    - name: wontfix
+      color: 336699
