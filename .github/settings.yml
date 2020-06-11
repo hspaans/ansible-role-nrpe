@@ -44,10 +44,54 @@ repository:
   # Labels: define labels for Issues and Pull Requests
   labels:
     - name: bug
-      color: CC0000
-    - name: feature
-      color: 336699
-    - name: planned
-      color: 336699
+      description: Something isn't working
+      color: "#d73a4a"
+
+    - name: documentation
+      description: Improvements or additions to documentation
+      color: "#0075ca"
+
+    - name: duplicate
+      description: This issue or pull request already exists
+      color: "#cfd3d7"
+
+    - name: enhancement
+      description: New feature or request
+      color: "#a2eeef"
+
+    - name: good first issue
+      description: Good for newcomers
+      color: "#7057ff"
+
+    - name: help wanted
+      description: Extra attention is needed
+      color: "#008672"
+
+    - name: invalid
+      description: This doesn't seem right
+      color: "#e4e669"
+
+    - name: question
+      description: Further information is requested
+      color: "#d876e3"
+
+    - name: stale
+      description: Further information is requested
+      color: "#e4e669"
+
     - name: wontfix
-      color: 336699
+      description: This issue or pull request will not be resolved
+      color: "#cfd3d7"
+
+    - name: planned
+      description: This issue or pull request is planned for the future
+      color: "#cfd3d7"
+
+    - name: security
+      description: Security issue found
+      color: "#d73a4a"
+
+# milestones:
+#   - title: milestone-title
+#     description: milestone-description
+#     state: open

@@ -12,7 +12,6 @@ onlyLabels: []
 
 # Issues with these labels will never be considered stale
 exemptLabels:
-  - pinned
   - security
   - planned
 
