@@ -1,2 +1,37 @@
 ---
-# tasks file for template
+- name: Gather OS specific variables for nrpe
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version}}.yml"
+    - "{{ ansible_distribution|lower }}.yml"
+
+- name: Install NRPE service
+  package:
+    name: "{{ nrpe_packages }}"
+    state: present
+  tags:
+    - packages
+
+- name: Install NRPE plugins
+  package:
+    name: "{{ nrpe_plugin_packages }}"
+    state: present
+  tags:
+    - packages
+
+- name: Create nrpe.cfg from template
+  template:
+    src: "nrpe_local.cfg.j2"
+    dest: "{{ nrpe_server_dir }}/nrpe_local.cfg"
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart nrpe service
+  tags:
+    - configuration
+
+- name: Ensure NRPE server is running
+  service:
+    name: "{{ nrpe_service }}"
+    state: started
+    enabled: true
