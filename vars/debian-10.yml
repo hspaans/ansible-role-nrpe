@@ -1,7 +1,7 @@
 ---
 nrpe_service: nagios-nrpe-server
-nrpe_server_dir: "/etc/nagios"
-nrpe_server_plugins_dir: "/usr/lib/nagios/plugins"
+nrpe_server_dir: /etc/nagios
+nrpe_server_plugins_dir: /usr/lib/nagios/plugins
 nrpe_packages:
   - nagios-nrpe-server
 nrpe_plugin_packages:
