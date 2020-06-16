@@ -4,29 +4,16 @@ galaxy_info:
   author: Hans Spaans
   description: Ansible Role for NRPE
 
+  issue_tracker_url: https://gitlab.com/hspaans/ansible-role-nrpe/-/issues
+
   license: MIT
 
   min_ansible_version: 2.9
 
   platforms:
-    - name: EL
-      versions:
-        - 6
-        - 7
-        - 8
     - name: Debian
       versions:
-        - 8
-        - 9
         - 10
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - 16.04
-        - 18.04
-        - 20.04
 
   galaxy_tags:
     - monitoring
