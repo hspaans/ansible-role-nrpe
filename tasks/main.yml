@@ -5,6 +5,20 @@
     - "{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version }}.yml"
     - "{{ ansible_distribution|lower }}.yml"
 
+- block:
+
+  - name: Enable CentOS-PowerTools repository
+    yum_repository:
+      name: PowerTools
+      file: CentOS-PowerTools
+      description: CentOS-$releasever - PowerTool
+      mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=PowerTools&infra=$infra
+      enabled: yes
+      gpgcheck: 1
+      gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+
+  when: (ansible_facts['distribution'] == 'CentOS' and ansible_facts['distribution_major_version'] == "8")
+
 - name: Install NRPE service
   package:
     name: "{{ nrpe_packages }}"
