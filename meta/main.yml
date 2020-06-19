@@ -4,8 +4,6 @@ galaxy_info:
   author: Hans Spaans
   description: Ansible Role for NRPE
 
-  issue_tracker_url: https://gitlab.com/hspaans/ansible-role-nrpe/-/issues
-
   license: MIT
 
   min_ansible_version: 2.9
