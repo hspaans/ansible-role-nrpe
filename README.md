@@ -1,31 +1,55 @@
-# Role Name
+Role Name
+=========
 
-A brief description of the role goes here.
+Install and configure NRPE
 
-## Requirements
+Requirements
+------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None as the nrpe package is being installed.
 
-## Role Variables
+Role Variables
+--------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Default variables are set in `defaults/main.yml`.
 
-## Dependencies
+Dependencies
+------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No dependency on other Ansible Galaxy roles.
 
-## Example Playbook
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Example Playbook
+----------------
 
     - hosts: servers
+      vars:
+        nrpe_server_allowed_hosts:
+          - 10.0.10.0/24
+          - 10.0.11.2
+          - 127.0.0.1
+        nrpe_plugin_packages:
+          - nagios-plugins-disk
+          - nagios-plugins-nagios
+          - nagios-plugins-users
+        nrpe_command:
+          check_disk_all:
+            script: check_disk
+            option: -w 80 -c 90
+          check_users:
+            script: check_users2
+            option: -w 1 -c 1
+          check_nagios:
+            script: check_nagios
+            option: -F /var/log/nagios/nagios.log -e 15 -C nagios
       roles:
-        - { role: username.rolename, x: 42 }
+         - { role: hspaans.nrpe, become: true }
 
-## License
+License
+-------
 
 MIT
 
-## Author Information
+Author Information
+------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role was created in 2020 by [Hans Spaans](https://github.com/hspaans).
