@@ -42,7 +42,7 @@ Example Playbook
             script: check_nagios
             option: -F /var/log/nagios/nagios.log -e 15 -C nagios
       roles:
-         - { role: hspaans.nrpe, become: true }
+        - { role: hspaans.nrpe, become: true }
 
 License
 -------
