@@ -4,6 +4,7 @@
   with_first_found:
     - "{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version }}.yml"
     - "{{ ansible_distribution|lower }}.yml"
+    - "{{ ansible_os_family|lower }}.yml"
     - "main.yml"
 
 - name: Enable CentOS-PowerTools repository
@@ -21,9 +22,23 @@
 
   when: (ansible_facts['distribution'] == 'CentOS' and ansible_facts['distribution_major_version'] == "8")
 
+- name: Enable CentOS-EPEL repository
+  block:
+
+    - name: Enable CentOS-EPEL repository
+      package:
+        name: epel-release
+        state: present
+
+    - name: Update yum cache (on Redhat).
+      yum:
+        update_cache: true
+
+  when: (ansible_facts['distribution'] == 'CentOS')
+
 - name: Install NRPE service
   package:
-    name: "{{ nrpe_packages }}"
+    name: "{{ nrpe_package }}"
     state: present
   tags:
     - packages
