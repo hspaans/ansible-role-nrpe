@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: nrpe
-  author: Hans Spaans
+  author: hspaans
   description: Ansible Role for NRPE
 
   license: MIT
@@ -16,6 +16,15 @@ galaxy_info:
     - name: Debian
       versions:
         - buster
+        - bullseye
+    - name: Fedora
+      versions:
+        - 33
+        - 34
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
 
   galaxy_tags:
     - monitoring
