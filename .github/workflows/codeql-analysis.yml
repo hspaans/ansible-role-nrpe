@@ -5,8 +5,11 @@ on:
   pull_request:
     branches:
       - master
+  push:
+    branches:
+      - master
   schedule:
-    - cron: "35 22 * * 4"
+    - cron: "35 22 * * 5"
 
 jobs:
   analyze:
