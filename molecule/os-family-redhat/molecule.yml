@@ -16,20 +16,6 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
-  - name: centos-8
-    image: "ghcr.io/hspaans/molecule-container-centos:8"
-    command: ""
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
-  - name: fedora-33
-    image: "ghcr.io/hspaans/molecule-container-fedora:33"
-    command: ""
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
   - name: fedora-34
     image: "ghcr.io/hspaans/molecule-container-fedora:34"
     command: ""
