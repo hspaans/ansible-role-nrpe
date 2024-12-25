@@ -18,9 +18,6 @@ galaxy_info:
         - focal
         - jammy
         - noble
-    - name: openSUSE
-      versions:
-        - 15.6
 
   galaxy_tags:
     - monitoring
