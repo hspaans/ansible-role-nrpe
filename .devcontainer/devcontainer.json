@@ -1,6 +1,6 @@
 {
   "name": "Python 3",
-  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers-contrib/features/ansible:2": {},
