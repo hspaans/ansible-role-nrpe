@@ -6,18 +6,18 @@ galaxy_info:
 
   license: MIT
 
-  min_ansible_version: 7.0.0
+  min_ansible_version: 10.0.0
 
   platforms:
     - name: Debian
       versions:
-        - buster
         - bullseye
         - bookworm
     - name: Ubuntu
       versions:
         - focal
         - jammy
+        - noble
 
   galaxy_tags:
     - monitoring
