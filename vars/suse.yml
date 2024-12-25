@@ -1,0 +1,12 @@
+---
+nrpe_service: nrpe
+nrpe_server_dir: /etc
+nrpe_server_plugins_dir: /usr/lib/nagios/plugins
+nrpe_package: nrpe
+nrpe_plugin_packages:
+  - monitoring-plugins
+#  - monitoring-plugins-disk
+#  - monitoring-plugins-procs
+#  - monitoring-plugins-users
+#  - monitoring-plugins-load
+#  - monitoring-plugins-mem
